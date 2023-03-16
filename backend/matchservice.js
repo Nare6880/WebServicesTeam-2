@@ -52,10 +52,23 @@ function generatePlayers(nPlayers) {
 	}
 	return arr;
 }
-app.get("/", (req, res) => {
-	res.send(generatePlayers(2000));
+function addPlayer(player) {
+	console.log("adding ", player);
+	database.collection("players").add({
+		UserName: player.UserName,
+		SkillElo: player.SkillElo,
+		ActualSkillElo: player.ActualSkillElo,
+		ToxicityElo: player.ToxicityElo,
+		ActualToxicityElo: player.ActualToxicityElo,
+	});
+}
+app.get("/generatePlayers", (req, res) => {
+	const playerData = generatePlayers(20);
+	console.log(playerData[1]);
+	res.send(playerData);
+	playerData.forEach((player) => addPlayer(player));
 });
-console.log(generatePlayers(400), "lmao");
+//console.log(generatePlayers(400), "lmao");
 //generate random values on a bellcurve taken from https://stackoverflow.com/questions/25582882/javascript-math-random-normal-distribution-gaussian-bell-curve
 function randn_bm() {
 	let u = 0,
