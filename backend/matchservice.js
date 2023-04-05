@@ -6,6 +6,7 @@ const serviceAccount = require("../ServiceAccountKey.json");
 firebaseAdmin.initializeApp({
 	credential: firebaseAdmin.credential.cert(serviceAccount),
 });
+var queue = [];
 const database = firebaseAdmin.firestore();
 const app = express();
 app.use(express.json());
@@ -17,27 +18,6 @@ app.use(function (req, res, next) {
 	);
 	next();
 });
-let playerData;
-// /getPlayer().then(res =>{
-// 	console.log(result.body);
-// 	const player = JSON.parse(result.body);
-// 	playerData = {
-// 		Username: player.UserName,
-// 		ToxicityElo: player.ToxicityElo,
-// 		SkillElo: player.ToxicityElo,
-// 	};
-
-// })
-//database.collection("players").add({});
-getPlayers().then((res) => {
-	console.log(res);
-});
-async function getPlayers() {
-	const playersRef = await database.collection("players").get();
-	return playersRef.docs.map((doc) => {
-		return { id: doc.id, data: doc.data() };
-	});
-}
 function generatePlayers(nPlayers) {
 	baseElo = 1000;
 	arr = [];
@@ -52,6 +32,21 @@ function generatePlayers(nPlayers) {
 	}
 	return arr;
 }
+//DB functions
+
+//gets all players in database
+async function getPlayers() {
+	const playersRef = await database.collection("players").get();
+	return playersRef.docs.map((doc) => {
+		return { id: doc.id, data: doc.data() };
+	});
+}
+async function getPlayer(uid) {
+	const doc = await database.collection("players").doc(uid).get();
+	console.log(doc.id);
+	return { id: doc.id, data: doc.data() };
+}
+//adds an individual player to database
 function addPlayer(player) {
 	console.log("adding ", player);
 	database.collection("players").add({
@@ -62,13 +57,42 @@ function addPlayer(player) {
 		ActualToxicityElo: player.ActualToxicityElo,
 	});
 }
+function addPlayerWithId(id, player) {
+	database.collection("players").doc(id).set({
+		UserName: player.UserName,
+		SkillElo: player.SkillElo,
+		ActualSkillElo: player.ActualSkillElo,
+		ToxicityElo: player.ToxicityElo,
+		ActualToxicityElo: player.ActualToxicityElo,
+	});
+}
+//Endpoints
+
+//generates 20 players and adds them to the players collection in firebase
 app.get("/generatePlayers", (req, res) => {
 	const playerData = generatePlayers(20);
 	console.log(playerData[1]);
 	res.send(playerData);
 	playerData.forEach((player) => addPlayer(player));
 });
-//console.log(generatePlayers(400), "lmao");
+app.get("/addPlayer", (req, res) => {
+	addPlayerWithId(req.query.id, {
+		UserName: req.query.UserName,
+		SkillElo: 1000,
+		ActualSkillElo: 1000 * (randn_bm() / 0.5),
+		ToxicityElo: 1000,
+		ActualToxicityElo: 1000 * (randn_bm() / 0.5),
+	});
+});
+app.get("/getPlayer", (req, res) => {
+	console.log(req.query.id);
+	player = getPlayer(req.query.id).then((player) => {
+		console.log(player);
+		res.send(player);
+	});
+});
+//gets a random player from players collection in firebase and adds them to queue
+app.get("/addPlayertoQueue", (req, res) => {});
 //generate random values on a bellcurve taken from https://stackoverflow.com/questions/25582882/javascript-math-random-normal-distribution-gaussian-bell-curve
 function randn_bm() {
 	let u = 0,
