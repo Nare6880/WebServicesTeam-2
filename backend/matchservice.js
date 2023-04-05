@@ -83,6 +83,7 @@ app.get("/addPlayer", (req, res) => {
 		ToxicityElo: 1000,
 		ActualToxicityElo: 1000 * (randn_bm() / 0.5),
 	});
+	res.send("Good");
 });
 app.get("/getPlayer", (req, res) => {
 	console.log(req.query.id);
