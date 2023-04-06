@@ -1,0 +1,52 @@
+
+<mat-sidenav-container class="sidenav">
+     <mat-sidenav mode="side" opened>
+        <label for="Dashboard"> <img src="assets/dashboards.png" alt="img" style="position: relative; top: 2px; padding-left: 20px; padding-top: 80px;" width="10%;"> Dashboard <br><br><br><br></label>
+        <label for="Dashboard"> <img src="assets/info-symbol.png" alt="img" style="position: relative; top: 2px; padding-left: 20px; padding-top: 20px;" width="10%;"> About <br><br><br><br></label>
+        <label for="Dashboard"> <img src="assets/notification-bell.png" alt="img" style="position: relative; top: 2px; padding-left: 20px; padding-top: 20px;" width="10%;"> Notifications <br><br><br><br></label>
+     </mat-sidenav>
+     <mat-sidenav-content>
+        <header>
+            <mat-toolbar>
+                <mat-toolbar-row>
+                  <span><img src="assets/logo.png" alt="img" style="position: relative; width: 20%; top: 4px;"></span>
+                  <span class="example-spacer"></span>
+                  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon" >
+                    <img src="assets/user.png" alt="img">
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>Settings</button>
+                        <button mat-menu-item (click)="logout()">Sign out</button>
+                    </mat-menu>
+                  </button>
+                </mat-toolbar-row>
+            </mat-toolbar>
+        </header>
+        <h1 id="h1">Hello,</h1>
+        <!-- <p id="username" *ngFor="let user of users">
+            {{ user.UserName}}
+        </p> -->
+        <!-- <app-grid></app-grid> -->
+        <link rel="stylesheet" href="https://use.typekit.net/psj4fii.css">
+        <button id="findGame" mat-raised-button type="button" style="position: relative; top: 30px;" (click)="onGetUsers()">Find Game</button>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<footer></footer>
+
+<!-- <div class="columns" style="position: relative; left: 150%; top: 20%;">
+    <h1 id="h1">Players</h1>
+                <link rel="stylesheet" href="https://use.typekit.net/psj4fii.css">
+                <button style="position: relative; top: 500px;">Start Game</button>
+            </div>
+        
+            <div class="buttons" style="position: relative; top: 10%; left: 10px;">
+                <link rel="stylesheet" href="https://use.typekit.net/psj4fii.css">
+                <img src="assets/house.png" alt="img" style="width: 15%; padding-right: 9px;">
+                <a>Home</a>
+            </div>
+        
+            <div class="buttons" style="position: relative; left: 10px; top: 10%;">
+                <link rel="stylesheet" href="https://use.typekit.net/psj4fii.css">
+                <img src="assets/edit.png" alt="img" style="width: 15%; padding-right: 9px;">
+               <a>Settings</a> -->
+ <!-- </div> -->
