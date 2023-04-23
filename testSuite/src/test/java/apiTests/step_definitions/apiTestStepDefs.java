@@ -37,4 +37,9 @@ public class apiTestStepDefs {
     public void unauthorized_users_send_a_get_request_to(String string) {
         Response response = given().get("local_api_url");
     }
+    
+        @When("authorized users send an unavailable request to {string}")
+    public void authorized_users_send_an_unavailable_request_to(String unavailable) {
+        Response response = given().get("local_api_url");
+    }
 }
