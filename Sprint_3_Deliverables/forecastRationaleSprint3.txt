@@ -1,0 +1,9 @@
+We as a team decided to use Fibonacci Series for pointing stories. (1 2 3 5 8 13)
+
+Each team member can contribute 2 hours in a day and 10 days in a sprint.
+Total team capacity per sprint is 80 hours.
+1 story point equals 2 hours(1 day).
+
+Total Team Capacity 40 points in a sprint.
+
+Because of day offs team velocity is 30 for this sprint.
