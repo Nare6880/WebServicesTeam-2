@@ -7,6 +7,18 @@ header {
   box-shadow: 40px #000000;
 }
 
+p {
+  font-family: "forma-djr-micro", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 100%;
+  width: 20%;
+  color: white;
+  padding-top: 60px;
+  padding-left: 40px;
+  display: inline-block;
+}
+
 mat-toolbar {
   position: sticky;
   top: 0;

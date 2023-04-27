@@ -35,5 +35,10 @@ export class MatchService {
       console.log(result);
     });
   }
+
+
+  getMatches(): Observable<any> {
+    return this.http.get<any>('https://us-central1-webservices-2.cloudfunctions.net/api/SimCurrent');   
+  }
   // this.http.post<Id[]>(`https://us-central1-webservices-2.cloudfunctions.net/api/addPlayer?id=${id}&UserName=${userName}`, {id, userName});
 }

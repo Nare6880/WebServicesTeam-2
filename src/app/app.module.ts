@@ -28,7 +28,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     DashboardComponent,
     LoginComponent,
     SignupComponent,
-    GridComponent
+    GridComponent,
   ],
   imports: [
     BrowserModule,

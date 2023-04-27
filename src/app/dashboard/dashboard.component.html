@@ -21,13 +21,11 @@
                 </mat-toolbar-row>
             </mat-toolbar>
         </header>
-        <h1 id="h1">Hello,</h1>
-        <!-- <p id="username" *ngFor="let user of users">
-            {{ user.UserName}}
-        </p> -->
+        <h1 id="h1">Hello {{ (userName) | json }},</h1>
+        <p style="position: absolute; top: 500px; left: 10%;"> Match found: {{ (display) }}</p>
         <!-- <app-grid></app-grid> -->
         <link rel="stylesheet" href="https://use.typekit.net/psj4fii.css">
-        <button id="findGame" mat-raised-button type="button" style="position: relative; top: 30px;" (click)="onGetUsers()">Find Game</button>
+        <button id="findGame" mat-raised-button type="button" style="position: absolute; top: 800px; right: 68%;" (click)="getMatches()">Find Game</button>
     </mat-sidenav-content>
 </mat-sidenav-container>
 
