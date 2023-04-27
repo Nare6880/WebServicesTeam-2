@@ -1,5 +1,5 @@
 
-ServiceAccountKey.json
+cd ServiceAccountKey.json
 node_modules/.package-lock.json
 node_modules/.bin/acorn
 node_modules/.bin/compileProtos
