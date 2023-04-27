@@ -1,0 +1,45 @@
+<body>
+    <div class="registerCard" style="position: relative; left: 75%; top: 10px;">
+
+        <img src="assets/logo.png" alt="img" width="60%" style="position: relative; left: 120px;">
+        
+        <h1 id="h1">Create an account</h1>
+
+        <h2 id="h2">Have an account? 
+            <a href="http://localhost:4200/" style="text-decoration: none;">
+                <span style="font-weight: bold;">
+                    Sign in
+                </span> 
+            </a>
+        </h2> 
+
+        <form>
+            <label id="h6">First Name</label>
+            <input type="text" id="fname" name="fname" [(ngModel)]="fname"><br>
+        </form>
+
+        <form>
+          <label id="h6">Last Name</label>
+          <input type="text" id="lname" name="lname" [(ngModel)]="lname"><br>
+        </form>
+
+        <form>
+            <label id="h6">User Name</label>
+            <input type="text" id="uname" name="uname" [(ngModel)]="uname"><br>
+          </form>
+
+        <form>
+            <label id="h6">Email</label>
+            <input type="text" id="email" name="emailAddress" [(ngModel)]="email"><br>
+        </form>
+
+        <form>
+            <label id="h6">Password</label>
+            <input (keydown.enter)="signUp()" type="password" id="password" name="password" [(ngModel)]="password"><br>
+        </form>
+
+        <button id="submit" type="submit" (click)="signUp()"> Sign up </button>
+
+    </div>
+
+</body>

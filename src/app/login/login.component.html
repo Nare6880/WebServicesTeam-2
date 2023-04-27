@@ -1,0 +1,37 @@
+<body>
+
+    <img src="assets/logo2.png" alt="img" style="position: relative; width: 120%; margin: 0px; padding: 0px;">
+    <img src="assets/joystick-01.png" alt="img" style="position: relative; top: 10px; left: 300px; width: 50%; margin: 0px; padding: 0px;">
+
+    <div class="card" style="position: relative; left: 900px; bottom: 70%;">
+
+        <h1 id="h1">Lets get started!</h1>
+        <h2 id="h2">Hi, Enter your details to access your account</h2>
+
+        <form>
+            <input type="text" id="email" name="emailAddress" placeholder="Email" [(ngModel)]="email"><br>
+        </form>
+
+        <form>
+            <input (keydown.enter)="login()" type="password" id="password" name="password" placeholder="Password" [(ngModel)]="password"><br>
+        </form>
+            <h3 id="h3"> Having trobule logging in?
+                <a href="http://localhost:4200" style="text-decoration: none;">
+                    <span style="font-weight: bold;">
+                        Forgot password
+                    </span>
+                </a>
+            </h3>
+
+            <button id="submit" type="submit" (click)="login()">Sign in</button>
+
+        <h4 id="h4">Don't have an account? 
+            <a href="http://localhost:4200/signup" style="text-decoration: none;">
+                <span style="font-weight: bold;">
+                    Sign up
+                </span>
+            </a>
+        </h4> 
+
+    </div>
+</body>

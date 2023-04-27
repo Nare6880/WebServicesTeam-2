@@ -1,0 +1,78 @@
+header {
+  position: fixed;
+  margin: 0px;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 40px #000000;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: white;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+#h1 {
+  font-family: "forma-djr-micro", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 300%;
+  width: 20%;
+  color: white;
+  padding-top: 60px;
+  padding-left: 40px;
+  display: inline-block;
+}
+
+mat-sidenav-content {
+  padding: 50px;
+}
+
+mat-sidenav {
+  position: fixed;
+  display: flex;
+  top: 64px;
+  width: 250px;
+  background-color: #A0E874;
+}
+
+.sidenav {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #8239E3;
+  /* #A0E874 */
+}
+
+#findGame {
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 10px;
+}
+
+label {
+  font-size: 25px;
+}
+
+/* #username {
+  display: table;
+  color: white;
+  font-size: larger;
+  margin: 0;
+  padding-left: 80px;
+} */

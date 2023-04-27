@@ -1,0 +1,104 @@
+.registerCard {
+    width: 600px;
+    height: 900px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 20px;
+}
+
+#h1 {
+    text-align: left;
+    font-family: new-hero, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: xx-large;
+    margin: 40px;
+}
+
+#h2 {
+    text-align: left;
+    font-family: new-hero, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: medium;
+    margin: 40px;
+    padding-bottom: 10px;
+}
+
+input[type=text] {
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    border: 2px solid rgb(241, 241, 241);
+    border-radius: 4px;
+    width: 85%;
+    height: 50px;
+    padding: 12px;
+    margin: 8px 0;
+    margin-left: 40px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+form {
+    padding-bottom: 15px;
+}
+
+#h6 {
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(137, 137, 137);
+    margin-left: 40px;
+}
+
+#submit {
+    background-color: #89c862;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    width: 85%;
+    height: 60px;
+    Top: 30px;
+    Left: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative; 
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  #submit:hover {
+    background-color: #59843f;
+}
+
+  #password {
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    border: 2px solid rgb(241, 241, 241);
+    border-radius: 4px;
+    width: 85%;
+    height: 50px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    margin-left: 40px;
+    box-sizing: border-box;
+}
